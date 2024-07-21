@@ -1,0 +1,123 @@
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+  <!-- Navbar -->
+  <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+    <div class="container-fluid py-1 px-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+          <li class="breadcrumb-item text-sm text-dark active" aria-current="page"><h3>Energy Token Marketplace</h3></li>
+        </ol>
+      </nav>
+      
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            <div class="text-start pt-1">
+              <p class="mb-0 text-capitalize">Account:</p>
+              <h4 class="mb-0 text-sm">{{ this.address }}</h4>
+            </div>
+          </div>
+          <div class="card-footer p-3">
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            
+            <div class="text-start pt-1">
+              <p class="text-sm mb-0 text-capitalize">Balance</p>
+              <h4 class="mb-0">{{ this.balanceToken }} ET (Energy tokens)</h4>
+            </div>
+          </div>
+          <div class="card-footer p-3">
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            
+            <div class="text-start pt-1">
+              <p class="text-sm mb-0 text-capitalize">Energy Generated</p>
+              <h4 class="mb-0">{{ this.balanceToken }} kWh</h4>
+            </div>
+          </div>
+          <div class="card-footer p-3">
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6">
+        <div class="card">
+          <div class="card-header p-3 pt-2">
+            
+            <div class="text-start pt-1">
+              <p class="text-sm mb-0 text-capitalize">Current Electricity price</p>
+              <h4 class="mb-0">{{ this.energyPrice }} £ per kWh</h4>
+            </div>
+          </div>
+          <div class="card-footer p-3">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+    </div>
+    <div class="row mb-4">
+      <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+        <div class="card">
+          <div class="card-header pb-0">
+            <div class="row">
+              <div class="col-lg-6 col-7">
+                <h6>Events</h6>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let event of this.events">
+                    <td>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm">{{ event.action }}</h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm">{{ event.amount }}</h6>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+          <div class="card-header pb-0">
+            <h6>Demo Actions</h6>
+          </div>
+          <div class="card-body p-3">
+            <app-mint></app-mint>
+            <app-burn></app-burn>
+            <app-transfer></app-transfer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet />
